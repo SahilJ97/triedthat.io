@@ -1,0 +1,27 @@
+FROM node:18-slim
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm install
+RUN npm install @rollup/rollup-linux-x64-gnu
+RUN npm install -g serve
+
+COPY . .
+
+# Pass env vars during build
+ARG VITE_BACKEND_API_URL
+ARG VITE_FRONTEND_URL
+ARG VITE_LINKEDIN_AUTH_URL
+ARG VITE_LINKEDIN_CLIENT_ID
+
+ENV VITE_BACKEND_API_URL=$VITE_BACKEND_API_URL
+ENV VITE_FRONTEND_URL=$VITE_FRONTEND_URL
+ENV VITE_LINKEDIN_AUTH_URL=$VITE_LINKEDIN_AUTH_URL
+ENV VITE_LINKEDIN_CLIENT_ID=$VITE_LINKEDIN_CLIENT_ID
+
+RUN npm run build
+RUN cp -r static dist/
+
+ENV PORT=3000
+CMD serve -s dist -l ${PORT}
