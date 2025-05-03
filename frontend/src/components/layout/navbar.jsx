@@ -115,12 +115,6 @@ const UserMenu = ({ user, logout, isMobile = false }) => {
         >
           My entries
         </Link>
-        <Link
-          to={`https://github.com/SahilJ97/triedthat.io`}
-          className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-        >
-          Source code
-        </Link>
         <Button
           variant="ghost"
           size="sm"
@@ -166,27 +160,6 @@ const UserMenu = ({ user, logout, isMobile = false }) => {
   // Desktop: add profile picture dropdown
   return (
     <div className="flex items-center">
-      <Link
-        to={`/contribute`}
-        className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
-      >
-        Submit
-      </Link>
-      <Separator orientation="vertical" className="h-6 mx-1" />
-      <Link
-        to={`/browse`}
-        className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
-      >
-        Browse recent
-      </Link>
-      <Link
-        to={`https://github.com/SahilJ97/triedthat.io`}
-        className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
-      >
-        Source code
-      </Link>
-      <Separator orientation="vertical" className="h-6 mx-1" />
-      
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <div className="h-8 w-8 rounded-full overflow-hidden flex items-center justify-center border border-gray-200 cursor-pointer ml-2">
@@ -226,7 +199,6 @@ const UserMenu = ({ user, logout, isMobile = false }) => {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-
       {/* Delete confirmation dialog */}
       <AlertDialog open={showDeleteConfirm} onOpenChange={setShowDeleteConfirm}>
         <AlertDialogContent className="bg-white" style={{ backgroundColor: 'white', opacity: 1 }}>
@@ -269,9 +241,39 @@ const Navbar = () => {
         <div className="flex-1 flex justify-end">
           <nav className="hidden md:flex items-center space-x-0 text-sm font-medium">
             {user ? (
-              <UserMenu user={user} logout={logout} />
+              <>
+                <Link
+                  to="/contribute"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
+                >
+                  Submit
+                </Link>
+                <Separator orientation="vertical" className="h-6 mx-1" />
+                <Link
+                  to="/browse"
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
+                >
+                  Browse recent
+                </Link>
+                <Separator orientation="vertical" className="h-6 mx-1" />
+                <Link
+                  to={`https://github.com/SahilJ97/triedthat.io`}
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
+                >
+                  Source code
+                </Link>
+                <UserMenu user={user} logout={logout} />
+              </>
             ) : (
-              <AuthButtons />
+              <>
+                <AuthButtons />
+                <Link
+                  to={`https://github.com/SahilJ97/triedthat.io`}
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors px-3"
+                >
+                  Source code
+                </Link>
+              </>
             )}
           </nav>
         </div>
@@ -287,6 +289,12 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent side="left" className="w-64 bg-white border-r shadow-lg">
               <div className="flex flex-col space-y-4 mt-4">
+                <Link
+                  to={`https://github.com/SahilJ97/triedthat.io`}
+                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                >
+                  Source code
+                </Link>
                 {user ? (
                   <UserMenu user={user} logout={logout} isMobile={true} />
                 ) : (

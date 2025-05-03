@@ -84,7 +84,9 @@ function Logs({ experienceId = null, userId = null, maxNumber = null }) {
             <Card className="flex flex-row items-center gap-4 p-4 sm:p-6 bg-white">
               <div className="flex-1 min-w-0">
                 <CardHeader className="p-0 mb-1">
-                  <CardTitle className="truncate max-w-full text-base sm:text-lg">
+                  <CardTitle 
+                    className={`truncate text-base sm:text-lg ${user && result.user_id === user.user_id ? 'max-w-[calc(100%-32px)]' : 'max-w-full'}`}
+                  >
                     {result.name}
                   </CardTitle>
                 </CardHeader>

@@ -61,7 +61,7 @@ function ContributeExperience() {
         <div style={{ marginBottom: 16 }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Share an entrepreneurial experience</div>
           <div style={{ color: '#888', fontSize: 15 }}>
-            This can be anything from an individual battle to a long journey spanning multiple ventures.
+            This can be anything from a single battle to a long journey spanning multiple ventures.
           </div>
         </div>
         {error && (

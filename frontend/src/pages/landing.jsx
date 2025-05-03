@@ -5,12 +5,14 @@ const LandingPage = () => {
   return (
     <main className="w-full flex flex-col items-center px-2 sm:px-0 mt-8 mb-8">
       <section className="w-full max-w-2xl mx-auto text-center mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold mb-2">Welcome.</h1>
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2">Welcome to triedthat.io</h1>
         <p className="text-muted-foreground text-base sm:text-lg mb-2">
-          Check out some experiences that were shared recently
+            The open journal for entrepreneurial experiences. Not just what worked, but also what didn't.
         </p>
       </section>
       <Logs />
+      <p className="text-muted-foreground text-base sm:text-lg mb-2 italic"><br/><br/>AI search assistant coming soon!</p>
+
     </main>
   );
 };
