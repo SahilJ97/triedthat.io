@@ -59,9 +59,9 @@ function ContributeExperience() {
     <main className="w-full flex flex-col items-center px-2 sm:px-0 mt-8 mb-8">
       <div style={{ maxWidth: 600, margin: '2rem auto', padding: 24, background: '#fff', borderRadius: 12, boxShadow: '0 4px 16px rgba(0,0,0,0.07)', position: 'relative' }}>
         <div style={{ marginBottom: 16 }}>
-          <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Share an entrepreneurial experience</div>
+          <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>Share an experience</div>
           <div style={{ color: '#888', fontSize: 15 }}>
-            This can be anything from a single battle to a long journey spanning multiple ventures.
+            This can be anything from a single battle to a long journey spanning multiple initiatives.
           </div>
         </div>
         {error && (
