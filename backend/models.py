@@ -44,7 +44,7 @@ class ParsedResponse(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'), nullable=False)
     name = Column(String(200), nullable=True)
-    raw_text = Column(String(15000), nullable=False)
+    raw_text = Column(String(20000), nullable=False)
     anonymize = Column(Boolean, nullable=False, default=False)
     parsed_response_json = Column(JSON, nullable=True)  # For additional details
     created_at = Column(TIMESTAMP(timezone=True), default=lambda: datetime.now(timezone.utc), nullable=False)

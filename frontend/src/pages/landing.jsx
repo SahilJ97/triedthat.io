@@ -7,7 +7,7 @@ const LandingPage = () => {
       <section className="w-full max-w-2xl mx-auto text-center mb-8">
         <h1 className="text-3xl sm:text-4xl font-bold mb-2">Welcome to triedthat.io</h1>
         <p className="text-muted-foreground text-base sm:text-lg mb-2">
-            The open journal for entrepreneurs and innovators. Not just what worked, but also what didn't.
+            The open journal for innovators. Not just what worked, but also what didn't.
         </p>
       </section>
       <Logs />
